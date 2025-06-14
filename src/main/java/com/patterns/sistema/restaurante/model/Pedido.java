@@ -2,8 +2,6 @@ package com.patterns.sistema.restaurante.model;
 
 import jakarta.persistence.*;
 
-// import java.util.List;
-
 @Entity
 public class Pedido {
     @Id
@@ -148,5 +146,9 @@ public class Pedido {
                 ", hasBebida=" + hasBebida +
                 ", fechado=" + fechado +
                 '}';
+    }
+
+    public String getDadosImprimir(){
+        return toString();
     }
 }
