@@ -8,14 +8,28 @@ import java.util.List;
 
 @Service
 public class MesaService {
-    private final MesaRepository mesaRepository;
-
-    public MesaService(MesaRepository mesaRepository) {
-        this.mesaRepository = mesaRepository;
+    private final MesaRepository repo;
+    public MesaService(MesaRepository repo) {
+        this.repo = repo;
     }
 
-    public List<Mesa> listarMesas() {
-        return mesaRepository.findAll();
+    public List<Mesa> listar() {
+        return repo.get();
     }
-    // outros métodos de negócio
+
+    public Mesa pegar(Integer id) {
+        return repo.get(id);
+    }
+
+    public Boolean adicionar(Mesa o) {
+        return repo.add(o);
+    }
+
+    public Boolean atualizar(Integer id, Mesa o) {
+        return repo.update(id, o);
+    }
+
+    public Boolean remover(Integer id) {
+        return repo.remove(id);
+    }
 }

@@ -2,17 +2,15 @@ package com.patterns.sistema.restaurante.model;
 
 import jakarta.persistence.*;
 
-// import java.util.List;
-
 @Entity
 public class Pedido {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long idMesa;
 
-    @ManyToOne
-    private Mesa mesa;
-
+    // @ManyToOne
+    // private Mesa mesa;
     // @ManyToMany
     // private List<Produto> produtos;
 
@@ -35,9 +33,9 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido(Mesa mesa, Carne c1, Carne c2, boolean hasBatata, boolean hasPolenta, boolean hasPicles,
+    public Pedido(Integer idMesa, Carne c1, Carne c2, boolean hasBatata, boolean hasPolenta, boolean hasPicles,
             boolean hasPalmito, boolean hasBebida) {
-        this.mesa = mesa;
+        this.idMesa = idMesa.longValue();
         this.carne1 = c1;
         this.carne2 = c2;
         this.hasBatata = hasBatata;
@@ -58,12 +56,12 @@ public class Pedido {
         this.id = id;
     }
 
-    public Mesa getMesa() {
-        return mesa;
+    public Long getIdMesa() {
+        return idMesa;
     }
 
-    public void setMesa(Mesa mesa) {
-        this.mesa = mesa;
+    public void setMesa(Long idMesa) {
+        this.idMesa = idMesa;
     }
 
     // public void setProdutos(List<Produto> produtos) {
@@ -138,7 +136,7 @@ public class Pedido {
     public String toString() {
         return "Pedido{" +
                 "id=" + id +
-                ", mesa=" + (mesa != null ? mesa.getId() : null) +
+                ", mesa=" + (idMesa != null ? idMesa : null) +
                 ", carne1=" + (carne1 != null ? carne1.toString() : null) +
                 ", carne2=" + (carne2 != null ? carne2.toString() : null) +
                 ", hasBatata=" + hasBatata +
@@ -148,5 +146,9 @@ public class Pedido {
                 ", hasBebida=" + hasBebida +
                 ", fechado=" + fechado +
                 '}';
+    }
+
+    public String getDadosImprimir(){
+        return toString();
     }
 }

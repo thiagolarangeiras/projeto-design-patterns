@@ -3,10 +3,6 @@ package com.patterns.sistema.restaurante.builder;
 import com.patterns.sistema.restaurante.model.Carne;
 import com.patterns.sistema.restaurante.model.Mesa;
 import com.patterns.sistema.restaurante.model.Pedido;
-//import com.patterns.sistema.restaurante.model.Produto;
-
-//import java.util.ArrayList;
-//import java.util.List;
 
 public class PedidoBuilder implements IPedidoBuilder {
     private Pedido pedido;
@@ -16,51 +12,57 @@ public class PedidoBuilder implements IPedidoBuilder {
     }
 
     @Override
-    public void setCarne1(Carne c1) {
+    public PedidoBuilder setCarne1(Carne c1) {
         this.pedido.setCarne1(c1);
+        return this;
     }
 
     @Override
-    public void setCarne2(Carne c2) {
+    public PedidoBuilder setCarne2(Carne c2) {
         this.pedido.setCarne2(c2);
-
+        return this;
     }
 
     @Override
-    public void setHasBatata() {
+    public PedidoBuilder setHasBatata() {
         this.pedido.setHasBatata(true);
+        return this;
     }
 
     @Override
-    public void setHasBebida() {
+    public PedidoBuilder setHasBebida() {
         this.pedido.setHasBebida(true);
+        return this;
     }
 
     @Override
-    public void setHasPalmito() {
+    public PedidoBuilder setHasPalmito() {
         this.pedido.setHasPalmito(true);
+        return this;
     }
 
     @Override
-    public void setHasPicles() {
+    public PedidoBuilder setHasPicles() {
         this.pedido.setHasPicles(true);
-
+        return this;
     }
 
     @Override
-    public void setHasPolenta() {
+    public PedidoBuilder setHasPolenta() {
         this.pedido.setHasPolenta(true);
-
+        return this;
     }
 
     @Override
-    public void setIsFechado() {
+    public PedidoBuilder setIsFechado() {
         this.pedido.setFechado(true);
+        return this;
     }
 
     @Override
-    public void setMesa(Mesa m) {
+    public PedidoBuilder setMesa(Mesa m) {
         this.setMesa(m);
+        return this;
     }
 
     @Override
@@ -87,15 +89,8 @@ public class PedidoBuilder implements IPedidoBuilder {
      * }
      */
 
-    /*
-     * public Pedido build() {
-     * Pedido pedido = new Pedido();
-     * 
-     * pedido.setMesa(mesa);
-     * pedido.setProdutos(produtos);
-     * pedido.setFechado(fechado);
-     * 
-     * return pedido;
-     * }
-     */
+    @Override
+    public Pedido build() {
+        return this.pedido;
+    }
 }

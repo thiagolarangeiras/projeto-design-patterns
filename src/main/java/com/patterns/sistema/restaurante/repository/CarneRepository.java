@@ -1,28 +1,28 @@
 package com.patterns.sistema.restaurante.repository;
 
-import com.patterns.sistema.restaurante.model.Mesa;
+import com.patterns.sistema.restaurante.model.Carne;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MesaRepository {
-    private final List<Mesa> db = new ArrayList<Mesa>();
+public class CarneRepository {
+    private final List<Carne> db = new ArrayList<Carne>();
 
-    public List<Mesa> get() {
+    public List<Carne> get() {
         return db;
     }
 
-    public Mesa get(Integer id) {
+    public Carne get(Integer id) {
         return db.get(id);
     }
 
-    public Boolean add(Mesa p) {
+    public Boolean add(Carne p) {
         return db.add(p);
     }
 
-    public Boolean update(Integer id, Mesa novo) {
+    public Boolean update(Integer id, Carne novo) {
         var atual = db.get(id);
         atual = novo;
         return true;
