@@ -2,6 +2,7 @@ package com.patterns.sistema.restaurante.builder;
 
 import com.patterns.sistema.restaurante.model.Carne;
 import com.patterns.sistema.restaurante.model.Mesa;
+import com.patterns.sistema.restaurante.model.Pedido;
 
 public interface IPedidoBuilder {
   public void setMesa(Mesa m);
@@ -23,4 +24,6 @@ public interface IPedidoBuilder {
   public void setIsFechado();
 
   public String getPedido();
+
+  public Pedido build();
 }

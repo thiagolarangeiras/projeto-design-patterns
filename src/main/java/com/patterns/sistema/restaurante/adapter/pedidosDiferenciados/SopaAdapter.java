@@ -1,13 +1,13 @@
-package com.patterns.sistema.restaurante.adapter;
+package com.patterns.sistema.restaurante.adapter.pedidosDiferenciados;
 
 import com.patterns.sistema.restaurante.model.Pedido;
 import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Sopa;
 import lombok.Data;
 
 @Data
-class PedidoSopaAdapter extends Pedido {
+class SopaAdapter extends Pedido {
     private Sopa sopa;
-    public PedidoSopaAdapter(Sopa sopa){
+    public SopaAdapter(Sopa sopa){
         this.sopa = sopa;
     }
 
@@ -20,7 +20,7 @@ class PedidoSopaAdapter extends Pedido {
     public String toString() {
         return "Pedido" +
                 "\ncodigo: " + getId() +
-                "\nmesa: " + (getMesa() != null ? getMesa().getId() : null) +
+                "\nmesa: " + (getIdMesa() != null ? getIdMesa() : null) +
                 "\nSopa" +
                 "\ncarne 1: " + (getCarne1() != null ? getCarne1().toString() : null) +
                 "\ncarne 2: " + (getCarne2() != null ? getCarne2().toString() : null) +

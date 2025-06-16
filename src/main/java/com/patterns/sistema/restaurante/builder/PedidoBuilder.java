@@ -87,15 +87,8 @@ public class PedidoBuilder implements IPedidoBuilder {
      * }
      */
 
-    /*
-     * public Pedido build() {
-     * Pedido pedido = new Pedido();
-     * 
-     * pedido.setMesa(mesa);
-     * pedido.setProdutos(produtos);
-     * pedido.setFechado(fechado);
-     * 
-     * return pedido;
-     * }
-     */
+    @Override
+    public Pedido build() {
+        return this.pedido;
+    }
 }

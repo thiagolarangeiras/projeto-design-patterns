@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mesas")
+@RequestMapping("/main")
 public class MainController {
     public MainController(){
 

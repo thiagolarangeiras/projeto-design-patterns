@@ -7,9 +7,10 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long idMesa;
+//    @ManyToOne
+//    private Mesa mesa;
 
-    @ManyToOne
-    private Mesa mesa;
 
     // @ManyToMany
     // private List<Produto> produtos;
@@ -56,12 +57,12 @@ public class Pedido {
         this.id = id;
     }
 
-    public Mesa getMesa() {
-        return mesa;
+    public Long getIdMesa() {
+        return idMesa;
     }
 
-    public void setMesa(Mesa mesa) {
-        this.mesa = mesa;
+    public void setMesa(Long idMesa) {
+        this.idMesa = idMesa;
     }
 
     // public void setProdutos(List<Produto> produtos) {

@@ -1,14 +1,13 @@
-package com.patterns.sistema.restaurante.adapter;
+package com.patterns.sistema.restaurante.adapter.pedidosDiferenciados;
 
 import com.patterns.sistema.restaurante.model.Pedido;
 import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Hamburguer;
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.PontoCarne;
 import lombok.Data;
 
 @Data
-public class PedidoHamburguerAdapter extends Pedido {
+public class HamburguerAdapter extends Pedido {
     private Hamburguer hamburguer;
-    public PedidoHamburguerAdapter(Hamburguer hamburguer){
+    public HamburguerAdapter(Hamburguer hamburguer){
         this.hamburguer = hamburguer;
     }
 
@@ -16,16 +15,14 @@ public class PedidoHamburguerAdapter extends Pedido {
     public String getDadosImprimir(){
         return toString();
     }
-    private PontoCarne pontoCarne1;
-    private PontoCarne pontoCarne2;
 
     @Override
     public String toString() {
         return "Pedido" +
                 "\ncodigo: " + getId() +
-                "\nmesa: " + (getMesa() != null ? getMesa().getId() : null) +
+                "\nmesa: " + (getIdMesa() != null ? getIdMesa() : null) +
                 "\nHamburguer" +
-                "\npicles: " + (hamburguer.isHasPicles() ? "sim" : "não") +
+                "\npicles: " + (isHasPicles() ? "sim" : "não") +
                 "\nmaionese: " + (hamburguer.isHasMaionese() ? "sim" : "não") +
                 "\nbebida: " + (isHasBebida() ? "sim" : "não") +
                 "\nfechado: " + (isFechado() ? "sim" : "não");
