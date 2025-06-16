@@ -5,23 +5,23 @@ import com.patterns.sistema.restaurante.model.Mesa;
 import com.patterns.sistema.restaurante.model.Pedido;
 
 public interface IPedidoBuilder {
-  public void setMesa(Mesa m);
+  public PedidoBuilder setMesa(Mesa m);
 
-  public void setCarne1(Carne c1);
+  public PedidoBuilder setCarne1(Carne c1);
 
-  public void setCarne2(Carne c2);
+  public PedidoBuilder setCarne2(Carne c2);
 
-  public void setHasBatata();
+  public PedidoBuilder setHasBatata();
 
-  public void setHasPolenta();
+  public PedidoBuilder setHasPolenta();
 
-  public void setHasPicles();
+  public PedidoBuilder setHasPicles();
 
-  public void setHasPalmito();
+  public PedidoBuilder setHasPalmito();
 
-  public void setHasBebida();
+  public PedidoBuilder setHasBebida();
 
-  public void setIsFechado();
+  public PedidoBuilder setIsFechado();
 
   public String getPedido();
 
