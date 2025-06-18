@@ -1,6 +1,6 @@
-package com.patterns.sistema.restaurante.builder.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.builder;
 
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Sanduiche;
+import com.patterns.sistema.restaurante.model.Sanduiche;
 
 public class SanduicheBuilder {
     private Sanduiche sanduiche;

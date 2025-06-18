@@ -1,13 +1,13 @@
-package com.patterns.sistema.restaurante.repository.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.service;
 
-import com.patterns.sistema.restaurante.adapter.pedidosDiferenciados.HamburguerAdapter;
+import com.patterns.sistema.restaurante.adapter.HamburguerAdapter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class HamburguerRepository {
+public class HamburguerService {
     private final List<HamburguerAdapter> db = new ArrayList<HamburguerAdapter>();
 
     public List<HamburguerAdapter> get() {

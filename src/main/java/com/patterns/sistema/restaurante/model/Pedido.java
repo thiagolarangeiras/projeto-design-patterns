@@ -1,18 +1,12 @@
 package com.patterns.sistema.restaurante.model;
 
-import jakarta.persistence.*;
+import lombok.Data;
 
-@Entity
+@Data
 public class Pedido {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long idMesa;
 
-    // @ManyToOne
-    // private Mesa mesa;
-    // @ManyToMany
-    // private List<Produto> produtos;
+    private Long idMesa;
 
     private boolean fechado;
 
@@ -43,94 +37,94 @@ public class Pedido {
         this.hasPicles = hasPicles;
         this.hasPalmito = hasPalmito;
         this.hasBebida = hasBebida;
-        this.setFechado(false);
+        this.fechado = false;
     }
 
     // getters e setters
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getIdMesa() {
-        return idMesa;
-    }
-
-    public void setMesa(Long idMesa) {
-        this.idMesa = idMesa;
-    }
-
-    // public void setProdutos(List<Produto> produtos) {
-    // this.produtos = produtos;
-    // }
-
-    public void setFechado(boolean fechado) {
-        this.fechado = fechado;
-    }
-
-    public boolean isFechado() {
-        return this.fechado;
-    }
-
-    public Carne getCarne1() {
-        return carne1;
-    }
-
-    public void setCarne1(Carne carne1) {
-        this.carne1 = carne1;
-    }
-
-    public Carne getCarne2() {
-        return carne2;
-    }
-
-    public void setCarne2(Carne carne2) {
-        this.carne2 = carne2;
-    }
-
-    public boolean isHasBatata() {
-        return hasBatata;
-    }
-
-    public void setHasBatata(boolean hasBatata) {
-        this.hasBatata = hasBatata;
-    }
-
-    public boolean isHasPolenta() {
-        return hasPolenta;
-    }
-
-    public void setHasPolenta(boolean hasPolenta) {
-        this.hasPolenta = hasPolenta;
-    }
-
-    public boolean isHasPicles() {
-        return hasPicles;
-    }
-
-    public void setHasPicles(boolean hasPicles) {
-        this.hasPicles = hasPicles;
-    }
-
-    public boolean isHasPalmito() {
-        return hasPalmito;
-    }
-
-    public void setHasPalmito(boolean hasPalmito) {
-        this.hasPalmito = hasPalmito;
-    }
-
-    public boolean isHasBebida() {
-        return hasBebida;
-    }
-
-    public void setHasBebida(boolean hasBebida) {
-        this.hasBebida = hasBebida;
-    }
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public Long getIdMesa() {
+//        return idMesa;
+//    }
+//
+//    public void setMesa(Long idMesa) {
+//        this.idMesa = idMesa;
+//    }
+//
+//    // public void setProdutos(List<Produto> produtos) {
+//    // this.produtos = produtos;
+//    // }
+//
+//    public void setFechado(boolean fechado) {
+//        this.fechado = fechado;
+//    }
+//
+//    public boolean isFechado() {
+//        return this.fechado;
+//    }
+//
+//    public Carne getCarne1() {
+//        return carne1;
+//    }
+//
+//    public void setCarne1(Carne carne1) {
+//        this.carne1 = carne1;
+//    }
+//
+//    public Carne getCarne2() {
+//        return carne2;
+//    }
+//
+//    public void setCarne2(Carne carne2) {
+//        this.carne2 = carne2;
+//    }
+//
+//    public boolean isHasBatata() {
+//        return hasBatata;
+//    }
+//
+//    public void setHasBatata(boolean hasBatata) {
+//        this.hasBatata = hasBatata;
+//    }
+//
+//    public boolean isHasPolenta() {
+//        return hasPolenta;
+//    }
+//
+//    public void setHasPolenta(boolean hasPolenta) {
+//        this.hasPolenta = hasPolenta;
+//    }
+//
+//    public boolean isHasPicles() {
+//        return hasPicles;
+//    }
+//
+//    public void setHasPicles(boolean hasPicles) {
+//        this.hasPicles = hasPicles;
+//    }
+//
+//    public boolean isHasPalmito() {
+//        return hasPalmito;
+//    }
+//
+//    public void setHasPalmito(boolean hasPalmito) {
+//        this.hasPalmito = hasPalmito;
+//    }
+//
+//    public boolean isHasBebida() {
+//        return hasBebida;
+//    }
+//
+//    public void setHasBebida(boolean hasBebida) {
+//        this.hasBebida = hasBebida;
+//    }
 
     @Override
     public String toString() {

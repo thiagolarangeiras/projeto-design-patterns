@@ -1,35 +1,34 @@
 package com.patterns.sistema.restaurante.service;
 
 import com.patterns.sistema.restaurante.model.Mesa;
-import com.patterns.sistema.restaurante.repository.MesaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class MesaService {
-    private final MesaRepository repo;
-    public MesaService(MesaRepository repo) {
-        this.repo = repo;
+    private final List<Mesa> db = new ArrayList<Mesa>();
+
+    public List<Mesa> get() {
+        return db;
     }
 
-    public List<Mesa> listar() {
-        return repo.get();
+    public Mesa get(Integer id) {
+        return db.get(id);
     }
 
-    public Mesa pegar(Integer id) {
-        return repo.get(id);
+    public Boolean add(Mesa p) {
+        return db.add(p);
     }
 
-    public Boolean adicionar(Mesa o) {
-        return repo.add(o);
+    public Boolean update(Integer id, Mesa novo) {
+        var atual = db.get(id);
+        atual = novo;
+        return true;
     }
 
-    public Boolean atualizar(Integer id, Mesa o) {
-        return repo.update(id, o);
-    }
-
-    public Boolean remover(Integer id) {
-        return repo.remove(id);
+    public Boolean remove(Integer id) {
+        return db.remove(id);
     }
 }

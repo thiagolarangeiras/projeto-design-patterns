@@ -1,39 +1,44 @@
 package com.patterns.sistema.restaurante.service;
 
 import com.patterns.sistema.restaurante.model.Pedido;
-import com.patterns.sistema.restaurante.repository.PedidoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PedidoService {
-    private final PedidoRepository repo;
-    public PedidoService(PedidoRepository repo) {
-        this.repo = repo;
+    private final List<Pedido> db = new ArrayList<Pedido>();
+
+    public List<Pedido> get() {
+        return db;
     }
 
-    public List<Pedido> listar() {
-        return repo.get();
+    public Pedido get(Integer id) {
+        return db.get(id);
     }
 
-    public Pedido pegar(Integer id) {
-        return repo.get(id);
+    public List<Pedido> getByIdMesa(Integer idMesa) {
+        List<Pedido> pedidosFiltrados = new ArrayList<Pedido>();
+        for(var pedido : db){
+            if(pedido.getIdMesa() == idMesa.longValue()){
+                pedidosFiltrados.add(pedido);
+            }
+        }
+        return pedidosFiltrados;
     }
 
-    public List<Pedido> pegarPorMesa(Integer idMesa) {
-        return repo.getByIdMesa(idMesa);
+    public Boolean add(Pedido p) {
+        return db.add(p);
     }
 
-    public Boolean adicionar(Pedido p) {
-        return repo.add(p);
+    public Boolean update(Integer id, Pedido pedido) {
+        var pedidoAtual = db.get(id);
+        pedidoAtual = pedido;
+        return true;
     }
 
-    public Boolean atualizar(Integer id, Pedido pedido) {
-        return repo.update(id, pedido);
-    }
-
-    public Boolean remover(Integer id) {
-        return repo.remove(id);
+    public Boolean remove(Integer id) {
+        return db.remove(id);
     }
 }

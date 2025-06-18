@@ -1,6 +1,6 @@
-package com.patterns.sistema.restaurante.builder.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.builder;
 
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Sopa;
+import com.patterns.sistema.restaurante.model.Sopa;
 
 public class SopaBuilder {
     private Sopa sopa;

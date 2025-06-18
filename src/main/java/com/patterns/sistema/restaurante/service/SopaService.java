@@ -1,13 +1,13 @@
-package com.patterns.sistema.restaurante.repository.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.service;
 
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Sopa;
+import com.patterns.sistema.restaurante.model.Sopa;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class SopaRepository {
+public class SopaService {
     private final List<Sopa> db = new ArrayList<Sopa>();
 
     public List<Sopa> get() {

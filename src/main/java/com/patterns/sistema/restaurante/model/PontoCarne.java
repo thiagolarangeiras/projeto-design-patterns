@@ -1,4 +1,4 @@
-package com.patterns.sistema.restaurante.model.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.model;
 
 public enum PontoCarne {
     MAL_PASSADA,

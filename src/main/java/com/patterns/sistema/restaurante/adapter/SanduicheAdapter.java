@@ -1,7 +1,7 @@
-package com.patterns.sistema.restaurante.adapter.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.adapter;
 
 import com.patterns.sistema.restaurante.model.Pedido;
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Sanduiche;
+import com.patterns.sistema.restaurante.model.Sanduiche;
 
 class SanduicheAdapter extends Pedido {
     private Sanduiche sanduiche;

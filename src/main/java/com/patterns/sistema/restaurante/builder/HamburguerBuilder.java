@@ -1,7 +1,7 @@
-package com.patterns.sistema.restaurante.builder.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.builder;
 
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Hamburguer;
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.PontoCarne;
+import com.patterns.sistema.restaurante.model.Hamburguer;
+import com.patterns.sistema.restaurante.model.PontoCarne;
 
 public class HamburguerBuilder {
     private Hamburguer hamburguer;

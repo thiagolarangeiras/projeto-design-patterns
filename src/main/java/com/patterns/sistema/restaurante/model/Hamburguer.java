@@ -1,4 +1,4 @@
-package com.patterns.sistema.restaurante.model.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.model;
 
 import lombok.Data;
 

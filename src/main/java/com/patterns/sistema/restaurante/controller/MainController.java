@@ -15,7 +15,17 @@ public class MainController {
 
     @GetMapping
     public void testar(){
-
+//        Mesa m = new Mesa();
+//
+//		Carne c = new Carne();
+//
+//		PedidoBuilder builder = new PedidoBuilder();
+//
+//		Director director = new Director();
+//
+//		director.buildPedidoCompleto(builder, m, c, c);
+//
+//		builder.toString();
     }
 
 }

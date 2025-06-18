@@ -1,13 +1,13 @@
-package com.patterns.sistema.restaurante.repository.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.service;
 
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Sanduiche;
+import com.patterns.sistema.restaurante.model.Sanduiche;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class SanduicheRepository {
+public class SanduicheService {
     private final List<Sanduiche> db = new ArrayList<Sanduiche>();
 
     public List<Sanduiche> get() {

@@ -1,7 +1,7 @@
-package com.patterns.sistema.restaurante.adapter.pedidosDiferenciados;
+package com.patterns.sistema.restaurante.adapter;
 
 import com.patterns.sistema.restaurante.model.Pedido;
-import com.patterns.sistema.restaurante.model.pedidosDiferenciados.Sopa;
+import com.patterns.sistema.restaurante.model.Sopa;
 import lombok.Data;
 
 @Data

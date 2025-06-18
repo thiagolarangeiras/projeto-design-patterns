@@ -1,13 +1,9 @@
 package com.patterns.sistema.restaurante.model;
 
-import jakarta.persistence.Entity;
 import lombok.Data;
 
 @Data
-@Entity
 public class Carne {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 

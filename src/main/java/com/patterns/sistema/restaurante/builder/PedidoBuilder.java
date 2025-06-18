@@ -1,5 +1,6 @@
 package com.patterns.sistema.restaurante.builder;
 
+import com.patterns.sistema.restaurante.builder.interfaces.IPedidoBuilder;
 import com.patterns.sistema.restaurante.model.Carne;
 import com.patterns.sistema.restaurante.model.Mesa;
 import com.patterns.sistema.restaurante.model.Pedido;

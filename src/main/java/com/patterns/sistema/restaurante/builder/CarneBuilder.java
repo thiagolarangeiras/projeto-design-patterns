@@ -1,5 +1,6 @@
 package com.patterns.sistema.restaurante.builder;
 
+import com.patterns.sistema.restaurante.builder.interfaces.ICarneBuilder;
 import com.patterns.sistema.restaurante.model.Carne;
 
 public class CarneBuilder implements ICarneBuilder {
