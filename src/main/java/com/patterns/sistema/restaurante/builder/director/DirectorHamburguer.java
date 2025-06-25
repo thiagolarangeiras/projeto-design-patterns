@@ -3,7 +3,7 @@ package com.patterns.sistema.restaurante.builder.director;
 import com.patterns.sistema.restaurante.builder.HamburguerBuilder;
 import com.patterns.sistema.restaurante.model.Carne;
 import com.patterns.sistema.restaurante.model.Mesa;
-import com.patterns.sistema.restaurante.model.PontoCarne;
+import com.patterns.sistema.restaurante.enums.PontoCarne;
 
 public class DirectorHamburguer {
 

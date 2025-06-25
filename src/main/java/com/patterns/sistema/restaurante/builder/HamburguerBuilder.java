@@ -4,7 +4,7 @@ import com.patterns.sistema.restaurante.adapter.HamburguerAdapter;
 import com.patterns.sistema.restaurante.model.Carne;
 import com.patterns.sistema.restaurante.model.Hamburguer;
 import com.patterns.sistema.restaurante.model.Mesa;
-import com.patterns.sistema.restaurante.model.PontoCarne;
+import com.patterns.sistema.restaurante.enums.PontoCarne;
 
 public class HamburguerBuilder {
     private Hamburguer hamburguer;

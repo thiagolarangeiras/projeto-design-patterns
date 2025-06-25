@@ -1,5 +1,7 @@
 package com.patterns.sistema.restaurante.controller;
 
+import com.patterns.sistema.restaurante.enums.StatusPedido;
+import com.patterns.sistema.restaurante.model.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,9 +10,7 @@ import com.patterns.sistema.restaurante.builder.HamburguerBuilder;
 import com.patterns.sistema.restaurante.builder.PedidoBuilder;
 import com.patterns.sistema.restaurante.builder.director.Director;
 import com.patterns.sistema.restaurante.builder.director.DirectorHamburguer;
-import com.patterns.sistema.restaurante.model.Carne;
-import com.patterns.sistema.restaurante.model.Mesa;
-import com.patterns.sistema.restaurante.model.PontoCarne;
+import com.patterns.sistema.restaurante.enums.PontoCarne;
 import com.patterns.sistema.restaurante.service.CarneService;
 import com.patterns.sistema.restaurante.service.HamburguerService;
 import com.patterns.sistema.restaurante.service.MesaService;
@@ -68,5 +68,24 @@ public class MainController {
         DirectorHamburguer.buildPedidoCompleto(pedidoBuilder, mesa, carneBoi, PontoCarne.PONTO);
         var hamburguer = pedidoBuilder.build();
         return hamburguer.getDadosImprimir();
+    }
+
+    @GetMapping("status-pedido")
+    public Pedido statusPedido(){
+        Pedido pedido = new Pedido();
+        pedido.setId(1L);
+
+        Cliente cliente = new Cliente("João", "123456789", "Rua A, 123");
+        pedido.addObserver(cliente);
+        Entregador entregador = new Entregador("Maria", "987654321", "ABC-1234");
+        pedido.addObserver(entregador);
+
+        pedido.setStatusPedido(StatusPedido.PENDENTE);
+        pedido.setStatusPedido(StatusPedido.EM_PREPARACAO);
+        pedido.setStatusPedido(StatusPedido.PRONTO);
+        pedido.setStatusPedido(StatusPedido.EM_ENTREGA);
+        pedido.setStatusPedido(StatusPedido.ENTREGUE);
+
+        return pedido;
     }
 }

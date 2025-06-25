@@ -1,13 +1,19 @@
 package com.patterns.sistema.restaurante.model;
 
+import com.patterns.sistema.restaurante.enums.StatusPedido;
+import com.patterns.sistema.restaurante.observer.PedidoObserver;
+import com.patterns.sistema.restaurante.observer.Subject;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pedido {
+public class Pedido implements Subject {
     private Long id;
 
     private Long idMesa;
@@ -29,6 +35,10 @@ public class Pedido {
     private boolean hasPalmito = false;
 
     private boolean hasBebida = false;
+
+    private StatusPedido statusPedido;
+
+    private List<PedidoObserver> observers = new ArrayList<>();
 
     public Pedido(Integer idMesa, Carne c1, Carne c2, boolean hasBatata, boolean hasPolenta, 
         boolean hasPicles,boolean hasPalmito, boolean hasBebida) {
@@ -72,5 +82,27 @@ public class Pedido {
                 "\n\tPalmito: " + (hasPalmito ? "sim" : "não") +
                 "\n\tBebida: " + (hasBebida ? "sim" : "não") +
                 "\n\tFechado: " + (fechado ? "sim" : "não");
+    }
+
+    public void setStatusPedido(StatusPedido statusPedido) {
+        this.statusPedido = statusPedido;
+        notifyObservers();
+    }
+
+    @Override
+    public void addObserver(PedidoObserver o) {
+        observers.add(o);
+    }
+
+    @Override
+    public void removeObserver(PedidoObserver o) {
+        observers.remove(o);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (PedidoObserver observer : observers) {
+            observer.update(this);
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.patterns.sistema.restaurante.model;
 
+import com.patterns.sistema.restaurante.enums.PontoCarne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

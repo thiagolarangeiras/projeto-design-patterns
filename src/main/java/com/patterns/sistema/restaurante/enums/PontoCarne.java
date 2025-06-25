@@ -1,4 +1,4 @@
-package com.patterns.sistema.restaurante.model;
+package com.patterns.sistema.restaurante.enums;
 
 public enum PontoCarne {
     MAL_PASSADA,
