@@ -14,8 +14,14 @@ public class PedidoService {
         return db;
     }
 
-    public Pedido get(Integer id) {
-        return db.get(id);
+    public String getById(Long id) {
+        Pedido pedido = db.stream()
+                        .filter(p -> p.getId().equals(id))
+                        .findFirst()
+                        .orElse(null);
+
+        String dados = pedido.getDadosImprimir();
+        return dados;
     }
 
     public List<Pedido> getByIdMesa(Integer idMesa) {
@@ -28,8 +34,9 @@ public class PedidoService {
         return pedidosFiltrados;
     }
 
-    public Boolean add(Pedido p) {
-        return db.add(p);
+    public Pedido add(Pedido p) {
+        db.add(p);
+        return p;
     }
 
     public Boolean update(Integer id, Pedido novo) {

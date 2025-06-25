@@ -81,7 +81,8 @@ public class Pedido implements Subject {
                 "\n\tPicles: " + (hasPicles ? "sim" : "não") +
                 "\n\tPalmito: " + (hasPalmito ? "sim" : "não") +
                 "\n\tBebida: " + (hasBebida ? "sim" : "não") +
-                "\n\tFechado: " + (fechado ? "sim" : "não");
+                "\n\tFechado: " + (fechado ? "sim" : "não") +
+                "\n\tStatus: " + (statusPedido != null ? statusPedido.toString() : "não definido");
     }
 
     public void setStatusPedido(StatusPedido statusPedido) {
@@ -104,5 +105,26 @@ public class Pedido implements Subject {
         for (PedidoObserver observer : observers) {
             observer.update(this);
         }
+    }
+
+    public void changeStatus() throws InterruptedException {
+        Thread.sleep(5000);
+        setStatusPedido(StatusPedido.EM_PREPARACAO);
+        Thread.sleep(5000);
+        setStatusPedido(StatusPedido.PRONTO);
+        Thread.sleep(5000);
+        setStatusPedido(StatusPedido.EM_ENTREGA);
+        Thread.sleep(5000);
+        setStatusPedido(StatusPedido.ENTREGUE);
+    }
+
+    public void iniciarMudancaStatusAsync() {
+        new Thread(() -> {
+            try {
+                changeStatus();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }).start();
     }
 }

@@ -1,15 +1,23 @@
 package com.patterns.sistema.restaurante.builder;
 
 import com.patterns.sistema.restaurante.builder.interfaces.IPedidoBuilder;
+import com.patterns.sistema.restaurante.enums.StatusPedido;
 import com.patterns.sistema.restaurante.model.Carne;
 import com.patterns.sistema.restaurante.model.Mesa;
 import com.patterns.sistema.restaurante.model.Pedido;
+import com.patterns.sistema.restaurante.observer.PedidoObserver;
 
 public class PedidoBuilder implements IPedidoBuilder {
     private Pedido pedido;
 
     public PedidoBuilder() {
         this.pedido = new Pedido();
+    }
+
+    @Override
+    public PedidoBuilder setId(Long id) {
+        this.pedido.setId(id);
+        return this;
     }
 
     @Override
@@ -67,9 +75,28 @@ public class PedidoBuilder implements IPedidoBuilder {
     }
 
     @Override
+    public PedidoBuilder setStatusPedido(StatusPedido status) {
+        this.pedido.setStatusPedido(status);
+        return this;
+    }
+
+    @Override
+    public PedidoBuilder addObserver(PedidoObserver observer) {
+        this.pedido.addObserver(observer);
+        return this;
+    }
+
+    @Override
+    public PedidoBuilder removeObserver(PedidoObserver observer) {
+        this.pedido.removeObserver(observer);
+        return this;
+    }
+
+    @Override
     public String getPedido() {
         return this.pedido.toString();
     }
+
 
     // public PedidoBuilder comMesa(Mesa mesa) {
     // this.mesa = mesa;

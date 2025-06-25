@@ -3,6 +3,7 @@ package com.patterns.sistema.restaurante.controller;
 import com.patterns.sistema.restaurante.enums.StatusPedido;
 import com.patterns.sistema.restaurante.model.*;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -50,13 +51,22 @@ public class MainController {
         var carneFrango = new Carne(2l, "Carne de Frango");
         var mesa1 = new Mesa(1l, 1);
         var pedidoBuilder = new PedidoBuilder();
+        Cliente cliente = new Cliente("João", "123456789", "Rua A, 123");
+        Entregador entregador = new Entregador("Maria", "987654321", "ABC-1234");
         Director.buildPedidoCompleto(
+            1L,
             pedidoBuilder,
             mesa1, 
             carneBoi,
-            carneFrango
+            carneFrango,
+            cliente,
+            entregador,
+            StatusPedido.PENDENTE
         );
         var pedido1 = pedidoBuilder.build();
+
+        pedidoService.add(pedido1);
+        pedido1.iniciarMudancaStatusAsync();
         return pedido1.getDadosImprimir();
     }
 
@@ -70,22 +80,9 @@ public class MainController {
         return hamburguer.getDadosImprimir();
     }
 
-    @GetMapping("status-pedido")
-    public Pedido statusPedido(){
-        Pedido pedido = new Pedido();
-        pedido.setId(1L);
+    @GetMapping("status-pedido/{id}")
+    public String statusPedido(@PathVariable Long id){
 
-        Cliente cliente = new Cliente("João", "123456789", "Rua A, 123");
-        pedido.addObserver(cliente);
-        Entregador entregador = new Entregador("Maria", "987654321", "ABC-1234");
-        pedido.addObserver(entregador);
-
-        pedido.setStatusPedido(StatusPedido.PENDENTE);
-        pedido.setStatusPedido(StatusPedido.EM_PREPARACAO);
-        pedido.setStatusPedido(StatusPedido.PRONTO);
-        pedido.setStatusPedido(StatusPedido.EM_ENTREGA);
-        pedido.setStatusPedido(StatusPedido.ENTREGUE);
-
-        return pedido;
+        return pedidoService.getById(id);
     }
 }
