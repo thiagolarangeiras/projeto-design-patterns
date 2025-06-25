@@ -32,9 +32,8 @@ public class PedidoService {
         return db.add(p);
     }
 
-    public Boolean update(Integer id, Pedido pedido) {
-        var pedidoAtual = db.get(id);
-        pedidoAtual = pedido;
+    public Boolean update(Integer id, Pedido novo) {
+        var atual = db.set(id, novo);
         return true;
     }
 

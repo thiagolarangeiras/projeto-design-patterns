@@ -23,8 +23,7 @@ public class SopaService {
     }
 
     public Boolean update(Integer id, Sopa novo) {
-        var atual = db.get(id);
-        atual = novo;
+        var atual = db.set(id, novo);
         return true;
     }
 

@@ -23,8 +23,7 @@ public class HamburguerService {
     }
 
     public Boolean update(Integer id, HamburguerAdapter novo) {
-        var atual = db.get(id);
-        atual = novo;
+        var atual = db.set(id, novo);
         return true;
     }
 

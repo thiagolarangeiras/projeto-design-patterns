@@ -10,7 +10,7 @@ public class Director {
 
   }
 
-  public void buildPedidoCompleto(PedidoBuilder pedidoBuilder, Mesa m, Carne c1, Carne c2) {
+  public static void buildPedidoCompleto(PedidoBuilder pedidoBuilder, Mesa m, Carne c1, Carne c2) {
     pedidoBuilder.setMesa(m);
     pedidoBuilder.setCarne1(c1);
     pedidoBuilder.setCarne2(c2);
@@ -21,7 +21,7 @@ public class Director {
     pedidoBuilder.setHasPolenta();
   }
 
-  public void buildPedidoSemSalada(PedidoBuilder pedidoBuilder, Mesa m, Carne c1, Carne c2) {
+  public static void buildPedidoSemSalada(PedidoBuilder pedidoBuilder, Mesa m, Carne c1, Carne c2) {
     pedidoBuilder.setMesa(m);
     pedidoBuilder.setCarne1(c1);
     pedidoBuilder.setCarne2(c2);
@@ -30,7 +30,7 @@ public class Director {
     pedidoBuilder.setHasPolenta();
   }
 
-  public void buildPedidoCarnivoro(PedidoBuilder pedidoBuilder, Mesa m, Carne c1, Carne c2) {
+  public static void buildPedidoCarnivoro(PedidoBuilder pedidoBuilder, Mesa m, Carne c1, Carne c2) {
     pedidoBuilder.setMesa(m);
     pedidoBuilder.setCarne1(c1);
     pedidoBuilder.setCarne2(c2);
