@@ -8,14 +8,10 @@
 
 3 - controller      // Controllers REST
 
-4 - dto             // Data Transfer Objects
+4 - exception       // Exceções customizadas
 
-5 - exception       // Exceções customizadas
+5 - model           // Entidades JPA
 
-6 - model           // Entidades JPA
+6 - observer        // Observadores de eventos
 
-7 - observer        // Observadores de eventos
-
-8 - repository      // Interfaces de acesso a dados
-
-9 - service         // Lógica de negócio
+7 - service         // Lógica de negócio
