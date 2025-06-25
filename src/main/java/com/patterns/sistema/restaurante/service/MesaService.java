@@ -23,8 +23,7 @@ public class MesaService {
     }
 
     public Boolean update(Integer id, Mesa novo) {
-        var atual = db.get(id);
-        atual = novo;
+        var atual = db.set(id, novo);
         return true;
     }
 

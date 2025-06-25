@@ -1,12 +1,18 @@
 package com.patterns.sistema.restaurante.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Pedido {
     private Long id;
 
     private Long idMesa;
+
+    private Mesa mesa;
 
     private boolean fechado;
 
@@ -24,11 +30,8 @@ public class Pedido {
 
     private boolean hasBebida = false;
 
-    public Pedido() {
-    }
-
-    public Pedido(Integer idMesa, Carne c1, Carne c2, boolean hasBatata, boolean hasPolenta, boolean hasPicles,
-            boolean hasPalmito, boolean hasBebida) {
+    public Pedido(Integer idMesa, Carne c1, Carne c2, boolean hasBatata, boolean hasPolenta, 
+        boolean hasPicles,boolean hasPalmito, boolean hasBebida) {
         this.idMesa = idMesa.longValue();
         this.carne1 = c1;
         this.carne2 = c2;
@@ -40,97 +43,11 @@ public class Pedido {
         this.fechado = false;
     }
 
-    // getters e setters
-
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public Long getIdMesa() {
-//        return idMesa;
-//    }
-//
-//    public void setMesa(Long idMesa) {
-//        this.idMesa = idMesa;
-//    }
-//
-//    // public void setProdutos(List<Produto> produtos) {
-//    // this.produtos = produtos;
-//    // }
-//
-//    public void setFechado(boolean fechado) {
-//        this.fechado = fechado;
-//    }
-//
-//    public boolean isFechado() {
-//        return this.fechado;
-//    }
-//
-//    public Carne getCarne1() {
-//        return carne1;
-//    }
-//
-//    public void setCarne1(Carne carne1) {
-//        this.carne1 = carne1;
-//    }
-//
-//    public Carne getCarne2() {
-//        return carne2;
-//    }
-//
-//    public void setCarne2(Carne carne2) {
-//        this.carne2 = carne2;
-//    }
-//
-//    public boolean isHasBatata() {
-//        return hasBatata;
-//    }
-//
-//    public void setHasBatata(boolean hasBatata) {
-//        this.hasBatata = hasBatata;
-//    }
-//
-//    public boolean isHasPolenta() {
-//        return hasPolenta;
-//    }
-//
-//    public void setHasPolenta(boolean hasPolenta) {
-//        this.hasPolenta = hasPolenta;
-//    }
-//
-//    public boolean isHasPicles() {
-//        return hasPicles;
-//    }
-//
-//    public void setHasPicles(boolean hasPicles) {
-//        this.hasPicles = hasPicles;
-//    }
-//
-//    public boolean isHasPalmito() {
-//        return hasPalmito;
-//    }
-//
-//    public void setHasPalmito(boolean hasPalmito) {
-//        this.hasPalmito = hasPalmito;
-//    }
-//
-//    public boolean isHasBebida() {
-//        return hasBebida;
-//    }
-//
-//    public void setHasBebida(boolean hasBebida) {
-//        this.hasBebida = hasBebida;
-//    }
-
     @Override
     public String toString() {
         return "Pedido{" +
                 "id=" + id +
-                ", mesa=" + (idMesa != null ? idMesa : null) +
+                ", mesa=" + (mesa != null ? mesa : "sem mesa") +
                 ", carne1=" + (carne1 != null ? carne1.toString() : null) +
                 ", carne2=" + (carne2 != null ? carne2.toString() : null) +
                 ", hasBatata=" + hasBatata +
@@ -143,6 +60,17 @@ public class Pedido {
     }
 
     public String getDadosImprimir(){
-        return toString();
+        //return toString();
+        return "Pedido" +
+                "\n\tCodigo: " + id +
+                "\n\tMesa: " + (mesa != null ? mesa.toString() : "sem mesa") +
+                "\n\tCarne 1: " + (carne1 != null ? carne1.toString() : null) +
+                "\n\tCarne 2: " + (carne2 != null ? carne2.toString() : null) +
+                "\n\tBatata: " + (hasBatata ? "sim" : "não") +
+                "\n\tPolenta: " + (hasPolenta ? "sim" : "não") +
+                "\n\tPicles: " + (hasPicles ? "sim" : "não") +
+                "\n\tPalmito: " + (hasPalmito ? "sim" : "não") +
+                "\n\tBebida: " + (hasBebida ? "sim" : "não") +
+                "\n\tFechado: " + (fechado ? "sim" : "não");
     }
 }

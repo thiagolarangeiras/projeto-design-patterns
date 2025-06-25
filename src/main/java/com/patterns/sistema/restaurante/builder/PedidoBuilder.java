@@ -62,7 +62,7 @@ public class PedidoBuilder implements IPedidoBuilder {
 
     @Override
     public PedidoBuilder setMesa(Mesa m) {
-        this.setMesa(m);
+        this.pedido.setMesa(m);
         return this;
     }
 

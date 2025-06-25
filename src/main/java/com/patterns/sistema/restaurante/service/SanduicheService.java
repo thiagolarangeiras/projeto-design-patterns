@@ -23,8 +23,7 @@ public class SanduicheService {
     }
 
     public Boolean update(Integer id, Sanduiche novo) {
-        var atual = db.get(id);
-        atual = novo;
+        var atual = db.set(id, novo);
         return true;
     }
 
